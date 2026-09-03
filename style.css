@@ -1,0 +1,957 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --rosa: #ec4899;
+    --rosa-fuerte: #db2777;
+    --rosa-claro: #fce7f3;
+    --rosa-suave: #fff1f7;
+
+    --verde: #10b981;
+    --rojo: #ef4444;
+    --morado: #8b5cf6;
+
+    --texto: #374151;
+    --gris: #6b7280;
+
+}
+
+
+/* ==============================
+   CUERPO
+============================== */
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--texto);
+
+    background-image:
+        linear-gradient(
+            rgba(255, 240, 247, 0.68),
+            rgba(255, 255, 255, 0.82)
+        ),
+        url("./tulipanes.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+}
+
+
+/* ==============================
+   CONTENEDOR
+============================== */
+
+.container {
+
+    width: 94%;
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding:
+        25px
+        0
+        35px;
+
+}
+
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
+.encabezado {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.logo-contenedor {
+
+    min-height: 130px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.logo {
+
+    width: 190px;
+
+    max-width: 75%;
+
+    max-height: 150px;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 15px;
+
+    filter:
+        drop-shadow(
+            0 7px 12px
+            rgba(180, 40, 100, 0.18)
+        );
+
+}
+
+
+.error-logo {
+
+    display: none;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    background: #fff1f2;
+
+    color: #be123c;
+
+    font-size: 13px;
+
+}
+
+
+.encabezado h1 {
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 48px;
+
+    color: var(--rosa-fuerte);
+
+    margin-bottom: 4px;
+
+    text-shadow:
+        0 2px 8px
+        rgba(219, 39, 119, 0.15);
+
+}
+
+
+.encabezado p {
+
+    color: #777;
+
+    font-size: 15px;
+
+}
+
+
+/* ==============================
+   RESUMEN
+============================== */
+
+.resumen {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.card {
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border:
+        1px solid
+        rgba(236, 72, 153, 0.15);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(190, 50, 110, 0.10);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.card .icono {
+
+    width: 52px;
+
+    height: 52px;
+
+    min-width: 52px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    background:
+        var(--rosa-claro);
+
+}
+
+
+.card span {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+    font-weight: 600;
+
+}
+
+
+.card strong {
+
+    display: block;
+
+    font-size: 24px;
+
+}
+
+
+.resumen-ingresos strong {
+    color: var(--rosa-fuerte);
+}
+
+
+.resumen-gastos strong {
+    color: var(--rojo);
+}
+
+
+.resumen-ganancia strong {
+    color: var(--verde);
+}
+
+
+.resumen-shows strong {
+    color: var(--morado);
+}
+
+
+/* ==============================
+   PANELES
+============================== */
+
+.panel {
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border:
+        1px solid
+        rgba(236, 72, 153, 0.16);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(180, 50, 110, 0.10);
+
+    backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+}
+
+
+.formulario {
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* ==============================
+   TÍTULOS
+============================== */
+
+.titulo-panel {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.titulo-icono {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--rosa-claro);
+
+    font-size: 21px;
+
+}
+
+
+.titulo-panel h2 {
+
+    color:
+        var(--rosa-fuerte);
+
+    font-size: 21px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.titulo-panel p {
+
+    color: #999;
+
+    font-size: 13px;
+
+}
+
+
+/* ==============================
+   FORMULARIO
+============================== */
+
+form {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 17px;
+
+}
+
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.campo label {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #4b5563;
+
+    margin-bottom: 7px;
+
+}
+
+
+.campo input {
+
+    width: 100%;
+
+    height: 45px;
+
+    padding:
+        0
+        13px;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+    border-radius: 10px;
+
+    background: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        0.2s;
+
+}
+
+
+.campo input:focus {
+
+    border-color:
+        var(--rosa);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(236, 72, 153, 0.10);
+
+}
+
+
+/* ==============================
+   RESULTADOS
+============================== */
+
+.resultado {
+
+    border-radius: 12px;
+
+    padding:
+        12px
+        16px;
+
+    min-height: 70px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.resultado span {
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-bottom: 4px;
+
+}
+
+
+.resultado strong {
+
+    font-size: 21px;
+
+}
+
+
+.resultado-gastos {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f7,
+            #fff8fb
+        );
+
+    border:
+        1px solid
+        #fbcfe8;
+
+}
+
+
+.resultado-gastos strong {
+
+    color:
+        var(--rosa-fuerte);
+
+}
+
+
+.resultado-ganancia {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #f5fffb
+        );
+
+    border:
+        1px solid
+        #a7f3d0;
+
+}
+
+
+.resultado-ganancia strong {
+
+    color:
+        var(--verde);
+
+}
+
+
+/* ==============================
+   BOTÓN AGREGAR
+============================== */
+
+.btn-agregar {
+
+    grid-column:
+        1 / -1;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f43f8c,
+            #db2777
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px
+        rgba(219, 39, 119, 0.25);
+
+    transition:
+        0.2s;
+
+}
+
+
+.btn-agregar:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* ==============================
+   TABLA
+============================== */
+
+.tabla-panel {
+
+    padding-bottom: 5px;
+
+}
+
+
+.tabla-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        22px
+        25px;
+
+    border-bottom:
+        1px solid
+        #fce7f3;
+
+}
+
+
+.tabla-header .titulo-panel {
+
+    margin-bottom: 0;
+
+}
+
+
+.btn-limpiar {
+
+    border:
+        1px solid
+        #fda4af;
+
+    background: white;
+
+    color:
+        #e11d48;
+
+    padding:
+        9px
+        14px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+
+.btn-limpiar:hover {
+
+    background:
+        #fff1f2;
+
+}
+
+
+.tabla-scroll {
+
+    overflow-x: auto;
+
+    padding:
+        0
+        20px
+        20px;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    min-width: 1150px;
+
+    border-collapse: collapse;
+
+    margin-top: 10px;
+
+}
+
+
+thead {
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff1f7,
+            #fdf2f8
+        );
+
+}
+
+
+th {
+
+    color:
+        var(--rosa-fuerte);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    padding:
+        13px
+        10px;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+}
+
+
+td {
+
+    padding:
+        13px
+        10px;
+
+    border-bottom:
+        1px solid
+        #f3f4f6;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+}
+
+
+tbody tr:hover {
+
+    background:
+        #fff8fb;
+
+}
+
+
+.ganancia-tabla {
+
+    color:
+        var(--verde);
+
+    font-weight: 800;
+
+}
+
+
+.gasto-tabla {
+
+    color:
+        var(--rosa-fuerte);
+
+    font-weight: 700;
+
+}
+
+
+/* ==============================
+   ELIMINAR
+============================== */
+
+.btn-eliminar {
+
+    border: none;
+
+    background:
+        #fff1f2;
+
+    color:
+        #e11d48;
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+/* ==============================
+   VACÍO
+============================== */
+
+.mensaje-vacio {
+
+    text-align: center;
+
+    padding:
+        50px
+        20px;
+
+    color: #999;
+
+}
+
+
+.corazon {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.mensaje-vacio h3 {
+
+    color: #777;
+
+    margin-bottom: 5px;
+
+    font-size: 16px;
+
+}
+
+
+.mensaje-vacio p {
+
+    font-size: 13px;
+
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        25px
+        10px
+        10px;
+
+    color:
+        var(--rosa-fuerte);
+
+}
+
+
+footer p {
+
+    color: #888;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 1100px) {
+
+    .resumen {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    form {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .container {
+
+        width: 96%;
+
+        padding-top: 15px;
+
+    }
+
+
+    .encabezado h1 {
+
+        font-size: 38px;
+
+    }
+
+
+    .logo {
+
+        width: 150px;
+
+    }
+
+
+    .resumen {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .tabla-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .btn-limpiar {
+
+        width: 100%;
+
+    }
+
+}

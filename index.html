@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mayito Detalles | Control de Ingresos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+
+            <div class="logo-contenedor">
+                <img
+                    src="./logo.jpg"
+                    alt="Logo Mayito Detalles"
+                    class="logo"
+                    onerror="this.style.display='none'; document.getElementById('errorLogo').style.display='block';"
+                >
+
+                <div id="errorLogo" class="error-logo">
+                    No se encontró <strong>logo.jpg</strong>
+                </div>
+            </div>
+
+            <h1>Control de Ingresos</h1>
+
+            <p>
+                Registro de shows, gastos y ganancias
+            </p>
+
+        </header>
+
+
+        <!-- RESUMEN -->
+        <section class="resumen">
+
+            <div class="card resumen-ingresos">
+                <div class="icono">💰</div>
+
+                <div>
+                    <span>Ingresos Totales</span>
+                    <strong id="totalIngresos">S/ 0.00</strong>
+                </div>
+            </div>
+
+
+            <div class="card resumen-gastos">
+                <div class="icono">🧾</div>
+
+                <div>
+                    <span>Gastos Totales</span>
+                    <strong id="totalGastos">S/ 0.00</strong>
+                </div>
+            </div>
+
+
+            <div class="card resumen-ganancia">
+                <div class="icono">📈</div>
+
+                <div>
+                    <span>Ganancia Total</span>
+                    <strong id="totalGanancia">S/ 0.00</strong>
+                </div>
+            </div>
+
+
+            <div class="card resumen-shows">
+                <div class="icono">🎀</div>
+
+                <div>
+                    <span>Total de Shows</span>
+                    <strong id="totalShows">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- REGISTRAR SHOW -->
+        <section class="panel formulario">
+
+            <div class="titulo-panel">
+
+                <div class="titulo-icono">
+                    🌸
+                </div>
+
+                <div>
+                    <h2>Registrar Nuevo Show</h2>
+                    <p>Ingresa los datos del evento</p>
+                </div>
+
+            </div>
+
+
+            <form id="formShow">
+
+                <div class="campo">
+                    <label for="fecha">
+                        📅 Fecha del Show
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        required
+                    >
+                </div>
+
+
+                <div class="campo campo-grande">
+                    <label for="show">
+                        🎤 Título del Show
+                    </label>
+
+                    <input
+                        type="text"
+                        id="show"
+                        placeholder="Ej. Cumpleaños, Boda, Evento..."
+                        required
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="precio">
+                        💵 Precio del Show (S/)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="precio"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="movilidad">
+                        🛵 Movilidad (S/)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="movilidad"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="descuentoMovilidad">
+                        🏷️ Descuento de Movilidad (S/)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="descuentoMovilidad"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="trabajador">
+                        👩‍💼 Descuento del Trabajador (S/)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="trabajador"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+                </div>
+
+
+                <div class="campo">
+                    <label for="otros">
+                        🧾 Otros Gastos (S/)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="otros"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                    >
+                </div>
+
+
+                <!-- RESULTADOS -->
+                <div class="resultado resultado-gastos">
+
+                    <span>
+                        Total de Descuentos / Gastos
+                    </span>
+
+                    <strong id="gastoActual">
+                        S/ 0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="resultado resultado-ganancia">
+
+                    <span>
+                        Ganancia Estimada
+                    </span>
+
+                    <strong id="gananciaActual">
+                        S/ 0.00
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-agregar"
+                >
+                    ✚ Agregar Show
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- TABLA -->
+        <section class="panel tabla-panel">
+
+            <div class="tabla-header">
+
+                <div class="titulo-panel">
+
+                    <div class="titulo-icono">
+                        🌷
+                    </div>
+
+                    <div>
+                        <h2>Shows Registrados</h2>
+
+                        <p>
+                            Historial de ingresos y ganancias
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="limpiarTodo"
+                    class="btn-limpiar"
+                >
+                    🗑️ Limpiar Todo
+                </button>
+
+            </div>
+
+
+            <div class="tabla-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Show</th>
+                            <th>Precio</th>
+                            <th>Movilidad</th>
+                            <th>Desc. Mov.</th>
+                            <th>Desc. Trabajador</th>
+                            <th>Otros Gastos</th>
+                            <th>Total Gastos</th>
+                            <th>Ganancia</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tablaShows"></tbody>
+
+                </table>
+
+
+                <div
+                    id="mensajeVacio"
+                    class="mensaje-vacio"
+                >
+
+                    <div class="corazon">
+                        💗
+                    </div>
+
+                    <h3>
+                        Todavía no hay shows registrados
+                    </h3>
+
+                    <p>
+                        Agrega tu primer show usando el formulario de arriba.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div>
+                🌸 <strong>Mayito Detalles</strong> 🌸
+            </div>
+
+            <p>
+                Control de shows y ganancias 💕
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
